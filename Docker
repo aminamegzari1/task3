@@ -1,0 +1,14 @@
+# Utilise une image de base
+FROM python:3.9
+
+# Définit le répertoire de travail dans le conteneur
+WORKDIR /app
+
+# Copie les fichiers nécessaires de votre application dans le conteneur
+COPY . /app
+
+# Installe les dépendances de votre application, par exemple, requirements.txt contiendrait les dépendances
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Commande pour exécuter votre application lorsque le conteneur démarre
+CMD ["python", "task.py"]
